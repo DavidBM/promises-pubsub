@@ -2,7 +2,7 @@
 
 It's a simple pub/sub bus with the capacity of making a rpc in the pub.
 
-Yo can use in the backend or in the frontend with browserify or similars.
+Yo can use in the **backend** or in the **frontend** with **browserify** or similars.
 Aditionally, you can generate a bundle for linking directly in the HTML with `gulp build`.
 
 The tests are in jasmine and can be executed with `gulp test`.
@@ -20,7 +20,23 @@ bud.send('test')('David')
     console.log(response); //"Hello David"
 });
 ```
+
 The first response is the response that receive the resolved Promise
+
+If you opted for make a bundle and linking directly in the HTML the code would look like:
+
+```js
+var bus = new PubSubBus();
+
+bus.on('test', function(name, done){
+      done('Hello ' + name);
+});
+
+bud.send('test')('David')
+.then(function (response) {
+    console.log(response); //"Hello David"
+});
+```
 
 ## API
 

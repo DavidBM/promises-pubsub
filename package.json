@@ -1,6 +1,6 @@
 {
   "name": "promises-pubsub",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A PubSub bus in js with RPC like capacities with promises",
   "main": "src/bus.js",
   "scripts": {

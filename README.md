@@ -8,6 +8,9 @@ Aditionally, you can generate a bundle for linking directly in the HTML with `gu
 The tests are in jasmine and can be executed with `gulp test`.
 
 ```js
+var Bus = require('promises-pubsub'); //On Node or Browserify
+var bus = new Bus();
+
 bus.on('test', function(name, done){
       done('Hello ' + name);
 });

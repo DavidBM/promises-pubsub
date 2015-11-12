@@ -2,6 +2,11 @@
 
 It's a simple pub/sub bus with the capacity of making a rpc in the pub.
 
+Yo can use in the backend or in the frontend with browserify or similars.
+Aditionally, you can generate a bundle for linking directly in the HTML with `gulp build`.
+
+The tests are in jasmine and can be executed with `gulp test`.
+
 ```js
 bus.on('test', function(name, done){
       done('Hello ' + name);

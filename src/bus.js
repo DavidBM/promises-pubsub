@@ -4,8 +4,6 @@ var debugVerbose = require('debug')('bus:verbose');
 var debugWarning = require('debug')('bus:warning');
 var Promise = require('promise');
 
-module.exports = exports = Bus;
-
 function voidFunction () {
 	var msg = 'message without receiver. Data:';
 	debugWarning(msg, arguments);
@@ -127,4 +125,10 @@ function getArguments (args, resolve) {
 
 function argumentsToArray (args) {
 	return Array.prototype.slice.call(args);
+}
+
+if(typeof module !== 'undefined' && module.exports){
+	module.exports = exports = Bus;
+}else if(typeof window !== 'undefined'){
+	window.PubSubBus = Bus;
 }

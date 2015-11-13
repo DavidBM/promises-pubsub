@@ -15,7 +15,7 @@ bus.on('test', function(name, done){
       done('Hello ' + name);
 });
 
-bud.send('test')('David')
+bus.send('test')('David')
 .then(function (response) {
     console.log(response); //"Hello David"
 });
@@ -32,7 +32,7 @@ bus.on('test', function(name, done){
       done('Hello ' + name);
 });
 
-bud.send('test')('David')
+bus.send('test')('David')
 .then(function (response) {
     console.log(response); //"Hello David"
 });
